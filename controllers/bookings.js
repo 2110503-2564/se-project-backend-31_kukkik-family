@@ -206,7 +206,7 @@ exports.deleteBooking = async (req, res, next) => {
 };
 
 // @desc GET booking status
-// @route GET /api/bookings/:id/status
+// @route GET /api/v1/bookings/:id/status
 // @access Private
 exports.getBookingStatus = async (req, res) => {
     try {
@@ -224,7 +224,7 @@ exports.getBookingStatus = async (req, res) => {
   
 
 // @desc UPDATE booking status
-// @route PATCH /api/bookings/:id/status
+// @route PATCH /api/v1/bookings/:id/status
 // @access Private
 exports.updateBookingStatus = async (req, res) => {
     const { status } = req.body;
