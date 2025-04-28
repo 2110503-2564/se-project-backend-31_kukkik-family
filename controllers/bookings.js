@@ -50,9 +50,9 @@ exports.getBookings = async (req, res, next) => {
     }
 };
 
-// @desc    Get single booking
-// @route   GET /api/v1/bookings/:id
-// @access  Private
+// @desc Get single booking
+// @route GET /api/v1/bookings/:id
+// @access Private
 exports.getBooking = async (req, res, next) => {
     try {
         const booking = await Booking.findById(req.params.id).populate({
@@ -74,9 +74,9 @@ exports.getBooking = async (req, res, next) => {
     }
 };
 
-// @desc    Add booking
-// @route   POST /api/v1/carProviders/:carProviderId/bookings
-// @access  Private
+// @desc Add booking
+// @route POST /api/v1/bookings
+// @access Private
 exports.addBooking = async (req, res, next) => {
     try {
         req.body.carProvider = req.params.carProviderId;
@@ -135,9 +135,9 @@ exports.addBooking = async (req, res, next) => {
     }
 };
 
-// @desc    Update booking
-// @route   PUT /api/v1/bookings/:id
-// @access  Private
+// @desc Update booking
+// @route PUT /api/v1/bookings/:id
+// @access Private
 exports.updateBooking = async (req, res, next) => {
     try {
         let booking = await Booking.findById(req.params.id);
@@ -180,9 +180,9 @@ exports.updateBooking = async (req, res, next) => {
     }
 };
 
-// @desc    Delete booking
-// @route   DELETE /api/v1/bookings/:id
-// @access  Private
+// @desc Delete booking
+// @route DELETE /api/v1/bookings/:id
+// @access Private
 exports.deleteBooking = async (req, res, next) => {
     try {
         const booking = await Booking.findById(req.params.id);
@@ -216,10 +216,10 @@ exports.deleteBooking = async (req, res, next) => {
     }
 };
 
-// @desc GET booking status
+// @desc Get booking status
 // @route GET /api/v1/bookings/:id/status
 // @access Private
-exports.getBookingStatus = async (req, res) => {
+exports.getBookingStatus = async (req, res, next) => {
     try {
       const booking = await Booking.findById(req.params.id).select('status');
   
@@ -234,7 +234,7 @@ exports.getBookingStatus = async (req, res) => {
   };
   
 
-// @desc UPDATE booking status
+// @desc Update booking status
 // @route PATCH /api/v1/bookings/:id/status
 // @access Private
 exports.updateBookingStatus = async (req, res) => {
@@ -264,9 +264,9 @@ exports.updateBookingStatus = async (req, res) => {
   };
   
 
-// @desc    Get renter's booking
-// @route   GET /api/v1/carProviders/:renterId/status
-// @access  Private
+// @desc Get renter's rentals
+// @route GET /api/v1/bookings/renter/rentals
+// @access Private
 exports.getRenterBooking = async (req, res, next) => {
     try{
         const renterId = req.user.id;

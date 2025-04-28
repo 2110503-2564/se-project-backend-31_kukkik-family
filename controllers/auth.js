@@ -25,7 +25,7 @@ exports.register = async (req, res, next) => {
 };
 
 //@desc   Login user
-//@route  POST /api/va/auth/login
+//@route  POST /api/v1/auth/login
 //@access Public
 exports.login = async (req, res, next) => {
     console.log(req);
@@ -130,7 +130,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 };
 
 //@desc   Get current logged in user
-//@route  POST /api/v1/auth/me
+//@route  GET /api/v1/auth/me
 //@access Private
 exports.getMe = async (req, res, next) => {
     const user = await User.findById(req.user.id);

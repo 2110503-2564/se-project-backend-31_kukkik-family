@@ -3,7 +3,7 @@ const Booking = require('../models/Booking');
 const User = require('../models/User');
 
 // @desc Get all car providers
-// @route GET /api/carProviders
+// @route GET /api/v1/carProviders
 // @access Public
 exports.getCarProviders = async (req, res, next) => {
     let query;
@@ -112,7 +112,7 @@ exports.getCarProviders = async (req, res, next) => {
 
 
 // @desc Get single car provider by ID
-// @route GET /api/carProviders/:id
+// @route GET /api/v1/carProviders/:id
 // @access Public
 exports.getCarProvider = async (req, res, next) => {
     try {
@@ -131,7 +131,7 @@ exports.getCarProvider = async (req, res, next) => {
 
 
 // @desc Create car provider
-// @route POST /api/carProviders/
+// @route POST /api/v1/carProviders
 // @access Private
 exports.createCarProvider = async (req, res, next) => {
 
@@ -152,7 +152,7 @@ exports.createCarProvider = async (req, res, next) => {
 };
 
 // @desc Update car provider
-// @route PUT /api/carProviders/:id
+// @route PUT /api/v1/carProviders/:id
 // @access Private
 exports.updateCarProvider = async (req, res, next) => {
     try {
@@ -173,7 +173,7 @@ exports.updateCarProvider = async (req, res, next) => {
 };
 
 // @desc Delete car provider
-// @route DELETE /api/carProviders/:id
+// @route DELETE /api/v1/carProviders/:id
 // @access Private
 exports.deleteCarProvider = async (req, res, next) => {
     try {
@@ -194,7 +194,7 @@ exports.deleteCarProvider = async (req, res, next) => {
 };
 
 // @desc Like a car provider
-// @route POST /api/carProviders/:id/like
+// @route POST /api/v1/carProviders/:id/like
 // @access Private
 exports.likeCarProvider = async (req, res, next) => {
     try {
@@ -248,7 +248,7 @@ exports.likeCarProvider = async (req, res, next) => {
 };
 
 // @desc GET a car status
-// @route GET /api/carproviders/:id/status
+// @route GET /api/v1/carProviders/:id/status
 // @access Private
 exports.getCarStatus = async (req, res) => {
     try {
@@ -268,7 +268,7 @@ exports.getCarStatus = async (req, res) => {
 };
 
 // @desc UPDATE a car status
-// @route PUT /api/carproviders/:id/status
+// @route PUT /api/v1/carProviders/:id/status
 // @access Private
 exports.updateCarStatus = async (req, res) => {
     const { status } = req.body;
@@ -321,7 +321,7 @@ exports.updateCarStatus = async (req, res) => {
 };
 
 // @desc get top X sales car default to 3
-// @route GET /api/carProviders/top-sales
+// @route GET /api/v1/carProviders/top-sales
 // @access Private
 exports.getTopSalesCar = async (req, res, next) => {
     try {
@@ -351,8 +351,8 @@ exports.getTopSalesCar = async (req, res, next) => {
     }
 };
 
-// @desc get rernter's all cars
-// @route GET /api/carProviders/renter/:renterId
+// @desc get renter's all cars
+// @route GET /api/v1/carProviders/renter/:renterId
 // @access Public
 exports.getAllRenterCars = async (req, res, next) => {
     try {
